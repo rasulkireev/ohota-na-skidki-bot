@@ -1,16 +1,6 @@
 from django.forms.utils import ErrorList
 import structlog
 
-from core.models import TelegramUser
-
-
-def get_or_create_telegram_user(telegram_user_id):
-    telegram_user, _ = TelegramUser.objects.get_or_create(
-        telegram_user_id=telegram_user_id
-    )
-
-    return telegram_user
-
 
 class DivErrorList(ErrorList):
     def __str__(self):
